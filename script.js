@@ -52,18 +52,22 @@ if(userGuessLog.length < maxGuesses) {
         document.getElementById('textOutput').innerHTML = 'Your guess is too low';
         document.getElementById('inputBox').value = "";
         } else {
-            document.getElementById('textOutput').innerHTML = 'Correct!';
+            document.getElementById('textOutput').innerHTML = 'Correct! you got it in ' +attempts + ' ' + 'attempts' ;
+            document.getElementById('container').style.backgroundColor = 'green';
             gameEnded();
         }
     } else {
         if(userGuess > computerGuess) {
-            document.getElementById('textOutput').innerHTML = 'You lose';
+            document.getElementById('textOutput').innerHTML = 'You lose' + '<br> The number was '+ computerGuess;
+            document.getElementById('container').style.backgroundColor = 'red';
             gameEnded();
         } else if (userGuess < computerGuess) {
-            document.getElementById('textOutput').innerHTML = 'You lose';
+            document.getElementById('textOutput').innerHTML = 'You lose' + '<br> The number was '+ computerGuess;
+            document.getElementById('container').style.backgroundColor = 'red';
             gameEnded();
         } else {
-            document.getElementById('textOutput').innerHTML = 'Correct!'
+            document.getElementById('textOutput').innerHTML = 'Correct! you got it in ' +attempts + ' '+'attempts';  
+            document.getElementById('container').style.backgroundColor = 'green';        
             gameEnded();
         }
     }
